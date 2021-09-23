@@ -9,15 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/testScene.unity
     guid: e6528783eb20a1d42aa6a6a8d3583b96
   - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: 15668d0917b48204abcd84199a115fa4
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 30faebe711f856e448fa6d4299292e0e
-  - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: c8945c27e21209449b9bcd23ece3de1d
+    path: Assets/Scenes/GameMainTest.unity
+    guid: e178ce1cc403d394eb2778003afd6723
   - enabled: 1
     path: Assets/BaseAssets/forRanking/naichilab/unity-simple-ranking/Scenes/Ranking.unity
     guid: 152244f5855414ac4a3874f14efa583c
+  - enabled: 1
+    path: Assets/Scenes/ResultScene.unity
+    guid: ab99dd292c157d541bb9c83f8ca4e766
+  - enabled: 1
+    path: Assets/Scenes/GameMain2.unity
+    guid: fc60b629f326c7b43853089e7b594e24
+  - enabled: 1
+    path: Assets/Scenes/ResultScene2.unity
+    guid: 55c99a643df8c1b49b980c9fe5673722
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_1.unity
+    guid: b53898ccfaf01e147bcf81b87bf9bdad
   m_configObjects: {}
