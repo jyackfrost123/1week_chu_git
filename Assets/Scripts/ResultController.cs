@@ -41,7 +41,7 @@ public class ResultController : MonoBehaviour
     private IEnumerator resultEffect(){
 
         for(int i = 0; i < fires.Length; i++){
-            if( viewScore  >  (10 * i) ){
+            if( viewScore  >=  (12 * i) ){
                 fires[i].SetActive(true);
                 yield return new WaitForSeconds (0.15f);
             }
@@ -56,19 +56,19 @@ public class ResultController : MonoBehaviour
     public string old_HyokaMessage(){
         string s = "";
 
-        if(viewScore < 50){
+        if(viewScore < 60){
             s = "山火事";
             return s;
-        }else if(viewScore < 100){
+        }else if(viewScore < 120){
             s = "1/5文字";
             return s;
-        }else if(viewScore < 150){
+        }else if(viewScore < 180){
             s = "2/5文字";
             return s;
-        }else if(viewScore < 200){
+        }else if(viewScore < 240){
             s = "小文字";
             return s;
-        }else if(viewScore < 250){
+        }else if(viewScore < 300){
             s = "中文字";
             return s;
         }

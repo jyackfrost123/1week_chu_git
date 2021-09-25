@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour{
     public float addTime = 2.0f;
 
     parametorController para;
-    bool isEnd = false;
+    public bool isEnd = false;
     public bool isStart = false;
 
     [SerializeField] private GameObject scoreUI;

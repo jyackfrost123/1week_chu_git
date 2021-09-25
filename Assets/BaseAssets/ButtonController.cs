@@ -123,6 +123,18 @@ public class ButtonController : MonoBehaviour
         FadeManager.Instance.LoadScene ("testScene", 0.5f);
     }
 
+    public void TrueSmapho(){
+        if(para != null){
+            if(para.IsSmapho == false){
+                para.IsSmapho = true;
+            }else{
+                para.IsSmapho = false;
+            }
+        }
+        
+    }
+
+
     //public void isSmaphoTrue
 
 

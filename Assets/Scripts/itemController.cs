@@ -14,6 +14,7 @@ public class itemController : MonoBehaviour{
     [SerializeField]private bool isFire = false;
 
     [SerializeField] private GameObject fireSE;
+    private itemGenerateController gen;
 
     // Start is called before the first frame update
     void Start(){
@@ -21,12 +22,16 @@ public class itemController : MonoBehaviour{
         ui = GameObject.Find("Canvas").GetComponent<UIController>();
         player = GameObject.Find("Player");
         this.transform.DOLocalMoveY(player.transform.position.y, 2.0f);
+        gen = GameObject.Find("ItemGenerator").GetComponent<itemGenerateController>();
     }
 
     // Update is called once per frame
     void FixedUpdate(){
-        if(player.transform.position.z > this.transform.position.z + 10.0f){
-            Destroy(this.gameObject);
+        if(this.transform.position.z > player.transform.position.z + 30.0f || this.transform.position.z < player.transform.position.z - 20.0f 
+            || this.transform.position.x > player.transform.position.x + 22.0f || this.transform.position.x < player.transform.position.x - 22.0f ){
+                if(gen.ItemNum > 0) gen.ItemNum--;
+                Destroy(this.gameObject);
+            
         }
     }
 
@@ -37,10 +42,19 @@ public class itemController : MonoBehaviour{
         if(other.gameObject.tag == "Player" && isFire == false){
             fire.SetActive(true);
             ui.AddScore(point);
+            if(gen.ItemNum > 0) gen.ItemNum--;
             //灯篭の消失演出を入れる
             StartCoroutine("Fade");
             isFire = true;
         }
+    }
+
+    IEnumerator Fade()  {
+        Instantiate(fireSE, this.transform.position , Quaternion.identity);
+        yield return new WaitForSeconds (2.0f);  
+
+        DOTweenSequence();
+        yield return null;  
     }
 
     void DOTweenSequence(){
@@ -56,12 +70,5 @@ public class itemController : MonoBehaviour{
         sequence.Play().OnComplete(() =>{
             Destroy(this.gameObject);
         });
-    }
-
-    IEnumerator Fade()  {
-        Instantiate(fireSE, this.transform.position , Quaternion.identity);
-        yield return new WaitForSeconds (2.0f);  
-        DOTweenSequence();
-        yield return null;  
     }
 }

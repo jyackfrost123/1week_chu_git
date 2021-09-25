@@ -7,11 +7,15 @@ public class PlayerController : MonoBehaviour
    //speedを制御する
     [SerializeField] private float speed = 1;
     [SerializeField] public GameObject gamePad;
-    [SerializeField] FixedJoystick m_VariableJoystick;
-    [SerializeField] GameObject fire;
-    [SerializeField] GameObject canvas;
+    [SerializeField] private FixedJoystick m_VariableJoystick;
+    [SerializeField] private GameObject fire;
+    [SerializeField] private GameObject canvas;
+
+    [SerializeField] private GameObject fire2;
+    [SerializeField] private GameObject ExplosionSE;
     UIController ui;//for Start
     Rigidbody rb;
+    bool isExplosion = false;
     
 
     void Start(){
@@ -40,6 +44,13 @@ public class PlayerController : MonoBehaviour
                     // if(m_VariableJoystick != null) z = m_VariableJoystick.Vertical;
                 }
 
+            }
+
+            if(ui.isEnd == true & isExplosion == false){
+                fire.SetActive(false);
+                Instantiate(fire2, this.transform.position, Quaternion.identity);
+                Instantiate(ExplosionSE, this.transform.position, Quaternion.identity);
+                isExplosion = true;
             }
         }
 
