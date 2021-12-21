@@ -86,7 +86,7 @@ public class UIController : MonoBehaviour{
 
     IEnumerator GameStartCountdown()  {
         //Instantiate(fireSE, this.transform.position , Quaternion.identity);
-        float localTime = 4.9f;
+        float localTime = 4.0f;
         while(localTime > 2.0f){
             localTime -=1.0f;
             startText.text = ((int)localTime).ToString();
