@@ -13,7 +13,7 @@ public class ResultController : MonoBehaviour
 
     [SerializeField] private GameObject HyoukaText;
     private Text hyoukaText;
-    // Start is called before the first frame update
+
     void Start()
     {
         //25個
@@ -31,13 +31,7 @@ public class ResultController : MonoBehaviour
         hyoukaText = HyoukaText.GetComponent<Text>();
         hyoukaText.text = "";
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-    }
-
+    
     private IEnumerator resultEffect(){
 
         for(int i = 0; i < fires.Length; i++){

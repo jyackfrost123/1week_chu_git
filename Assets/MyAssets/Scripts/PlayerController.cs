@@ -39,9 +39,7 @@ public class PlayerController : MonoBehaviour
                 }else{
                     //入力をxとzに代入
                     x = Input.GetAxis("Horizontal");
-                    // if(m_VariableJoystick != null) 
                     z = Input.GetAxis("Vertical");
-                    // if(m_VariableJoystick != null) z = m_VariableJoystick.Vertical;
                 }
 
             }
@@ -53,14 +51,8 @@ public class PlayerController : MonoBehaviour
                 isExplosion = true;
             }
         }
-
-
-
-
-        //rigidbodyのx軸(横)とz軸(奥)に力を加える、x,zにspeedを掛ける
+ 
         rb.AddForce(x * speed, 0, z * speed);
-
-
-        //MouseMove();
+        
     }
 }

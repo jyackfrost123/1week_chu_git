@@ -4,17 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class SmaphoCheckContollrt : MonoBehaviour
+public class SmaphoCheckController : MonoBehaviour
 {
 
     Text SmaphoText;
     parametorController para;
     Image smaphoImage;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
-        //
+
         SmaphoText = transform.GetChild(0).gameObject.GetComponent<Text>();
         
         if(GameObject.Find("NCMBSettings") != null){

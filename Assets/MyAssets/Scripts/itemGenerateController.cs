@@ -22,22 +22,14 @@ public class itemGenerateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //InvokeRepeating("GenerateItems", 2.0f, 0.3f);
         InvokeRepeating("GenerateItems", 2.0f, 1.0f);
 
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-    }
-
+    
     void GenerateItems(){
 
         if(ItemNum < MaxNumItem){//21 or 7
             if(isFree == true){
-                //本当はこうしたい
                 float rad = 2.0f*Mathf.PI*Random.Range(0.0f, 1.0f);
                 Instantiate(prefab, player.transform.position + new Vector3(Rlength*Mathf.Cos(rad) , -2.0f, Rlength*Mathf.Sin(rad)+2.5f ), Quaternion.identity);
                 ItemNum++;
@@ -47,12 +39,6 @@ public class itemGenerateController : MonoBehaviour
             }
 
         }
-
-
-
-        //Instantiate(prefab, player.transform.position + new Vector3(Xlength * Random.Range(-1.0f, 1.0f), -2.0f, Zlength * Random.Range(-1.0f, 1.0f)), Quaternion.identity);
-
-
 
     }
 }

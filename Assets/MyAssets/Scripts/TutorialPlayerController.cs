@@ -42,23 +42,17 @@ public class TutorialPlayerController : MonoBehaviour
         float z = 0.0f;
 
         //入力をxとzに代入
-        //x = Input.GetAxis("Horizontal");
-        // if(m_VariableJoystick != null) 
-        //z = Input.GetAxis("Vertical");
         if(isSmapho == true){
             x = m_VariableJoystick.Horizontal;
             z = m_VariableJoystick.Vertical;
         }else{
             //入力をxとzに代入
              x = Input.GetAxis("Horizontal");
-            // if(m_VariableJoystick != null) 
-            z = Input.GetAxis("Vertical");
-             // if(m_VariableJoystick != null) z = m_VariableJoystick.Vertical;
+             z = Input.GetAxis("Vertical");
         }
 
         //rigidbodyのx軸(横)とz軸(奥)に力を加える、x,zにspeedを掛ける
         rb.AddForce(x * speed, 0, z * speed);
 
-        //MouseMove();
     }
 }
